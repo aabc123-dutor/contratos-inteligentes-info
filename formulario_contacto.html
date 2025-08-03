@@ -58,13 +58,15 @@
     <h1>Contáctanos</h1>
     <form action="https://formsubmit.co/el/xutefe" method="POST">
       <input type="hidden" name="_next" value="https://aabc123-dutor.github.io/contratos-inteligentes-info/gracias_contacto.html">
-      <input type="hidden" name="_subject" value="Formulario de contacto">
-      <!-- <input type="hidden" name="_gotcha" style="display:none !important"> -->
+      <input type="hidden" name="_captcha" value="false">
       <label for="name">Nombre</label>
       <input type="text" id="name" name="name" required>
 
       <label for="email">Correo electrónico</label>
       <input type="email" id="email" name="email" required>
+
+      <label for="subject">Asunto</label>
+      <input type="text" id="subject" name="subject" required>
 
       <label for="message">Mensaje</label>
       <textarea id="message" name="message" rows="5" required></textarea>
