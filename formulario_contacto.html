@@ -72,5 +72,39 @@
 
       <button type="submit">Enviar mensaje</button>
   </div>
+  <script>
+  $(function () {
+    $(".formcarryForm").submit(function (e) {
+      e.preventDefault();
+      var href = $(this).attr("action");
+
+
+      $.ajax({
+        type: "POST",
+        url: href,
+        data: new FormData(this),
+        dataType: "json",
+        processData: false,
+        contentType: false,
+        success: function (response) {
+          if (response.status == "success") {
+            window.location.href = "gracias_contacto.html";
+          } else if (response.code === 422) {
+            alert("Faltan campos obligatorios.");
+            $.each(response.errors, function (key) {
+              $('[name="' + key + '"]').addClass('formcarry-field-error');
+            });
+          } else {
+            alert("Ocurrió un error: " + response.message);
+          }
+        },
+        error: function (jqXHR) {
+          const errorObject = jqXHR.responseJSON;
+          alert("Error: " + errorObject.title + ": " + errorObject.message);
+        }
+      });
+    });
+  });
+</script>
 </body>
 </html>
