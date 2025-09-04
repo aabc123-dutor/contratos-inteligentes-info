@@ -43,26 +43,13 @@
       cursor: pointer;
       text-decoration: none;
     }
-    nav {
-      background: #214B8C;
-      padding: 10px 0;
-      text-align: center;
-    }
-    nav a {
-      color: #fff;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1rem;
-      transition: color 0.2s;
-    }
-    nav a:hover {
-      color: #29B3A4;
-    }
     section {
-      padding: 60px 20px;
+      padding: 32px 20px 0 20px; /* Menos padding arriba, nada abajo */
       max-width: 1000px;
       margin: auto;
+    }
+    section + section {
+      margin-top: 0; /* Elimina separación extra entre secciones */
     }
     h2 {
       font-family: 'Montserrat', sans-serif;
@@ -85,6 +72,11 @@
     .steps {
       list-style: decimal;
       padding-left: 20px;
+      font-size: 1.35rem; /* Letra más grande */
+      letter-spacing: 0.04em; /* Más espaciado entre letras */
+      line-height: 2.2; /* Más espacio entre líneas */
+      margin-top: 0;
+      margin-bottom: 0;
     }
     .testimonial {
       font-style: italic;
@@ -93,24 +85,20 @@
       border-radius: 12px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
-    .cta-button:hover {
-      background-color: #21897A;
-      box-shadow: 0 2px 8px rgba(41,179,164,0.2);
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: #214B8C;
+      color: white;
     }
-    @media (max-width: 600px) {
-      header h1 { font-size: 1.5rem; }
-      section { padding: 30px 10px; }
+    @media (max-width: 700px) {
       .benefits { flex-direction: column; }
+      section { padding: 24px 10px 0 10px; }
+      .steps { font-size: 1.1rem; }
     }
   </style>
 </head>
 <body>
-  <nav>
-    <a href="#que-es">¿Qué es?</a>
-    <a href="#beneficios">Beneficios</a>
-    <a href="#como-funciona">Cómo funciona</a>
-    <a href="formulario_contacto.html">Contacto</a>
-  </nav>
   <header>
     <img src="logo_transparente_contraste.png" alt="Smart Lease Logo">
     <h1>Automatiza tus contratos inmobiliarios con tecnología blockchain</h1>
@@ -118,12 +106,12 @@
     <a href="formulario_contacto.html" class="cta-button">¿Quieres más información?</a>
   </header>
 
-  <section id="que-es">
+  <section>
     <h2>¿Qué es Smart Lease?</h2>
     <p>Smart Lease es una plataforma que digitaliza y automatiza contratos inmobiliarios y compraventa de inmuebles mediante tecnología blockchain. Elimina intermediarios, reduce errores y garantiza seguridad legal.</p>
   </section>
 
-  <section id="beneficios">
+  <section>
     <h2>Beneficios</h2>
     <div class="benefits">
       <div class="benefit">
@@ -141,7 +129,7 @@
     </div>
   </section>
 
-  <section id="como-funciona">
+  <section>
     <h2>Cómo funciona</h2>
     <ol class="steps">
       <li>Sube la información del contrato</li>
@@ -151,17 +139,7 @@
     </ol>
   </section>
 
-  <section>
-    <h2>Preguntas frecuentes</h2>
-    <div class="benefit">
-      <h3>¿Qué necesito para usar Smart Lease?</h3>
-      <p>Solo tu información y acceso a internet. Nosotros nos encargamos del resto.</p>
-      <h3>¿Es legal el contrato digital?</h3>
-      <p>Sí, cumple con las normativas de firma electrónica y blockchain.</p>
-    </div>
-  </section>
-
-  <!-- <section>
+ <!-- <section>
     <h2>Testimonio</h2>
     <div class="testimonial">
       <p>“Rentar una propiedad nunca fue tan fácil. Ya no tengo que estar recordando vencimientos ni preocuparme por fraudes.”<br> — María Gómez, propietaria</p>
